@@ -1,0 +1,11 @@
+Model Information:
+* title:	Old travel case
+* source:	https://sketchfab.com/3d-models/old-travel-case-989abc9ba0cb4d21985effc7be5abd9c
+* author:	b_nealie (https://sketchfab.com/b_nealie)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Old travel case" (https://sketchfab.com/3d-models/old-travel-case-989abc9ba0cb4d21985effc7be5abd9c) by b_nealie (https://sketchfab.com/b_nealie) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
