@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="index.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="chat-container">
+          <div class="chat-module" onscroll="manageChatOverlay()">
+            <div class="thread">
+              <div class="thread-item">
+                <div class="avatar-container">
+                  <div class="calliope appearing">
+                    <div class="head">
+                      <div class="eye-left"></div>
+                      <div class="eye-right"></div>
+                    </div>
+                    <div class="torso">
+                      <div class="arm-left"></div>
+                      <div class="arm-right"></div>
+                    </div>
+                    <div class="feet"></div>
+                  </div>
+                </div>
+                <div class="response-container">
+                  <div class="reponse">
+                    Hello !
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="scroll-overlay overlay-hidden"></div>
+          <form class="form-prompt" onsubmit="event.preventDefault();sendInput();return false;">
+            <div class="user-prompt-indicator">
+              >
+            </div>
+            <input autofocus="1" class="user-prompt" data-role="user-input" type="text" />
+            <div class="user-mic-toggle"></div>
+          </form>
+        </div>
+      </div>
+    
+</body>
+
+</html>
