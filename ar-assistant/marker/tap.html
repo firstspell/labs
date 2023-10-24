@@ -13,6 +13,7 @@
 	<script src="threex/threex-artoolkitcontext.js"></script>
 	<script src="threex/threex-arbasecontrols.js"></script>
 	<script src="threex/threex-armarkercontrols.js"></script>
+	<script src='script.js'></script>
 </head>
 
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
@@ -34,6 +35,7 @@ var sceneGroup;
 
 var globe;
 
+// assistantIntroVoice();
 initialize();
 animate();
 
@@ -148,6 +150,7 @@ function initialize()
 	
 	let pointLight = new THREE.PointLight( 0xffffff, 1, 50 );
 	camera.add( pointLight );
+	assistantIntroVoice();
 }
 
 
