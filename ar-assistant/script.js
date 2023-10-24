@@ -82,7 +82,7 @@ var models = [
   },
   {
     url: "./assets/taps/scene.gltf",
-    scale: "0.08 0.08 0.08",
+    scale: "0.5 0.5 0.5",
     rotation: "0 180 0",
     info: "Tap, Lv. 99, HP 150/150"
   }
