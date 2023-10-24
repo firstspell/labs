@@ -140,8 +140,17 @@ function initialize()
 	
 	let geometry1 = new THREE.BoxGeometry (10,10,10);	
 	let texture = loader.load( 'images/screwdriver.png' );
+
+	texture.wrapS = THREE.RepeatWrapping;
+	texture.wrapT = THREE.RepeatWrapping;
+	texture.repeat.set( 4, 4 );
+
 	let material1 = new THREE.MeshLambertMaterial( { map: texture, opacity: 0.75 } );
-	globe = new THREE.Mesh(geometry1,material1 );
+	globe = new THREE.Mesh(material1 );
+
+
+
+
 	globe.position.y = 1;
 	sceneGroup.add(globe); 
 	
