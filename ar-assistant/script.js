@@ -4,13 +4,13 @@ window.onload = () => {
 
   let today = new Date();
   let curHr = today.getHours();
-  let msg = "";
+  let greetMsg = "";
   if (curHr < 12) {
-    msg = "good morning";
+    greetMsg = "good morning";
   } else if (curHr < 18) {
-    msg = "good afternoon";
+    greetMsg = "good afternoon";
   } else {
-    msg = "good evening";
+    greetMsg = "good evening";
   }
 
   let places = staticLoadPlaces();
@@ -24,7 +24,7 @@ window.onload = () => {
     msg.rate = 1; // From 0.1 to 10
     msg.pitch = 2; // From 0 to 2
     // msg.lang = "es";
-    msg.text = `Hi, {msg}, how can i help you today.`;
+    msg.text = `Hi, ${greetMsg}, how can i help you today.`;
     window.speechSynthesis.speak(msg);
   } else {
     // Speech Synthesis Not Supported 😣
@@ -50,16 +50,14 @@ function staticLoadPlaces() {
   }
   return [
     {
-      name: "AR Assistant",
+      name: "Pokèmon",
       location: {
-        lat: currentPosition.latitude,
-        lng: currentPosition.longitude
+        lat: 13.081206160268227,
+        lng: 77.64014750889895
       }
     }
   ];
 }
-
-staticLoadPlaces();
 
 var models = [
   {
@@ -105,7 +103,7 @@ var setModel = function (model, entity) {
   entity.setAttribute("gltf-model", model.url);
 
   const div = document.querySelector(".instructions");
-  div.innerText = model.info;
+  div.innerText = model.info + model.position;
 };
 
 function renderPlaces(places) {
