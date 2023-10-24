@@ -18,6 +18,12 @@ window.onload = () => {
 
   if ("speechSynthesis" in window) {
     let msg = new SpeechSynthesisUtterance();
+    var voices = window.speechSynthesis.getVoices();
+    msg.voice = voices[10];
+    msg.volume = 1; // From 0 to 1
+    msg.rate = 1; // From 0.1 to 10
+    msg.pitch = 2; // From 0 to 2
+    // msg.lang = "es";
     msg.text = `Hi, {msg}, how can i help you today.`;
     window.speechSynthesis.speak(msg);
   } else {
@@ -27,28 +33,33 @@ window.onload = () => {
 };
 
 function staticLoadPlaces() {
+  let currentPosition = { latitude: "", longitude: "" };
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function (position) {
       const latitude = position.coords.latitude;
       const longitude = position.coords.longitude;
+      currentPosition.latitude = latitude;
+      currentPosition.longitude = longitude;
       console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
       document.getElementById(
         "help-text"
-      ).innerText = `Latitude: ${latitude}, Longitude: ${longitude}`;
+      ).innerText = `Latitude: ${currentPosition.latitude}, Longitude: ${currentPosition.longitude}`;
     });
   } else {
     console.log("Geolocation is not supported by this browser.");
   }
   return [
     {
-      name: "Pokèmon",
+      name: "AR Assistant",
       location: {
-        lat: 13.081206160268227,
-        lng: 77.64014750889895
+        lat: currentPosition.latitude,
+        lng: currentPosition.longitude
       }
     }
   ];
 }
+
+staticLoadPlaces();
 
 var models = [
   {
