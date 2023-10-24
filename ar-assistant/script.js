@@ -19,11 +19,11 @@ window.onload = () => {
   if ("speechSynthesis" in window) {
     let msg = new SpeechSynthesisUtterance();
     var voices = window.speechSynthesis.getVoices();
-    msg.voice = voices[10];
-    msg.volume = 1; // From 0 to 1
-    msg.rate = 1; // From 0.1 to 10
-    msg.pitch = 2; // From 0 to 2
-    // msg.lang = "es";
+    // msg.voice = voices[10];
+    // msg.volume = 1; // From 0 to 1
+    // msg.rate = 1; // From 0.1 to 10
+    // msg.pitch = 2; // From 0 to 2
+    // msg.lang = "en";
     msg.text = `Hi, ${greetMsg}, how can i help you today.`;
     window.speechSynthesis.speak(msg);
   } else {
@@ -50,7 +50,7 @@ function staticLoadPlaces() {
   }
   return [
     {
-      name: "Pokèmon",
+      name: "AR Assistant",
       location: {
         lat: 13.081206160268227,
         lng: 77.64014750889895
