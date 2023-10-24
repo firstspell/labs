@@ -2,8 +2,28 @@ window.onload = () => {
   const button = document.querySelector('button[data-action="change"]');
   button.innerText = "﹖";
 
+  let today = new Date();
+  let curHr = today.getHours();
+  let msg = "";
+  if (curHr < 12) {
+    msg = "good morning";
+  } else if (curHr < 18) {
+    msg = "good afternoon";
+  } else {
+    msg = "good evening";
+  }
+
   let places = staticLoadPlaces();
   renderPlaces(places);
+
+  if ("speechSynthesis" in window) {
+    let msg = new SpeechSynthesisUtterance();
+    msg.text = `Hi, {msg}, how can i help you today.`;
+    window.speechSynthesis.speak(msg);
+  } else {
+    // Speech Synthesis Not Supported 😣
+    alert("Sorry, your browser doesn't support text to speech!");
+  }
 };
 
 function staticLoadPlaces() {
@@ -48,8 +68,7 @@ var models = [
     scale: "0.08 0.08 0.08",
     rotation: "0 180 0",
     info: "Dragonite, Lv. 99, HP 150/150"
-  }
-  ,
+  },
   {
     url: "./assets/taps/scene.gltf",
     scale: "0.08 0.08 0.08",
