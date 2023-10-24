@@ -138,7 +138,7 @@ function initialize()
 	
 	let loader = new THREE.TextureLoader();
 	
-	let geometry1 = new THREE.BoxGeometry (30,30,30);	
+	let geometry1 = new THREE.BoxGeometry (2,2,2);	
 	let texture = loader.load( 'images/tap1.png' );
 	let material1 = new THREE.MeshLambertMaterial( { map: texture, opacity: 0.75 } );
 	globe = new THREE.Mesh(geometry1,material1 );
