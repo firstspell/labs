@@ -83,6 +83,24 @@ var models = [
     scale: "0.5 0.5 0.5",
     rotation: "0 180 0",
     info: "Tap, Lv. 99, HP 150/150"
+  },
+  {
+    url: "./assets/beetle/scene.gltf",
+    scale: "0.5 0.5 0.5",
+    info: "beetle, Lv. 5, HP 10/10",
+    rotation: "0 180 0"
+  },
+  {
+    url: "./assets/phoenix_bird/scene.gltf",
+    scale: "0.5 0.5 0.5",
+    info: "phoenix_bird, Lv. 5, HP 10/10",
+    rotation: "0 180 0"
+  },
+  {
+    url: "./assets/nasa_titan/scene.gltf",
+    scale: "0.5 0.5 0.5",
+    info: "nasa_titan, Lv. 5, HP 10/10",
+    rotation: "0 180 0"
   }
 ];
 

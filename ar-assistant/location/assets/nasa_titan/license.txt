@@ -1,0 +1,11 @@
+Model Information:
+* title:	NASA Titan 4
+* source:	https://sketchfab.com/3d-models/nasa-titan-4-207f40b576d44488a67a0193eb20849c
+* author:	Space Explorers Academy (https://sketchfab.com/SpaceExplorersAcademy)
+
+Model License:
+* license type:	CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions must have the same license.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "NASA Titan 4" (https://sketchfab.com/3d-models/nasa-titan-4-207f40b576d44488a67a0193eb20849c) by Space Explorers Academy (https://sketchfab.com/SpaceExplorersAcademy) licensed under CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
