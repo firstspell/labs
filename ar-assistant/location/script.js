@@ -3,8 +3,8 @@ window.onload = () => {
 };
 
 async function loadModels() {
-  await populateSceneInLocations();
-  console.log(":::ready::::");
+  // await populateSceneInLocations();
+  // console.log(":::ready::::");
 }
 let modelList = [
   {
@@ -120,8 +120,11 @@ async function populateSceneInLocations(models) {
     );
     setModel(modelItem, entity);
     entity.setAttribute("animation-mixer", "");
+    console.log(entity.textContent);
+    console.log(entity.getAttribute("gps-entity-place"));
     scene.appendChild(entity);
   });
+  console.log("::scene ::::", scene);
 }
 
 function renderPlaces(places) {
