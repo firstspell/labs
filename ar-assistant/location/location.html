@@ -1,25 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>GeoAR.js demo</title>
-    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
-    <script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
-    <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-    <script>
-      THREEx.ArToolkitContext.baseURL =
-        "https://raw.githack.com/jeromeetienne/ar.js/master/three.js/";
-    </script>
-    <script src="./location.js"></script>
-    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get Current Location</title>
   </head>
+  <body>
+    <h1>Get Current Location</h1>
+    <button onclick="getLocation()">Get Location</button>
+    <p id="location"></p>
 
-  <body style="margin: 0; overflow: hidden">
-    <div class="centered instructions"></div>
-    <div class="centered">
-      <button onclick="updateCurrentPosition()" data-action="change"></button>
-      <span id="help-text"></span>
-    </div>
+    <script>
+      function getLocation() {
+        // Check if geolocation is supported by the browser
+        if ("geolocation" in navigator) {
+          navigator.geolocation.getCurrentPosition(function (position) {
+            // Extract latitude and longitude from the position object
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+
+            // Display latitude and longitude
+            const locationPara = document.getElementById("location");
+            locationPara.textContent = `Latitude: ${latitude}, Longitude: ${longitude}`;
+          });
+        } else {
+          // Geolocation not supported by the browser
+          const locationPara = document.getElementById("location"); 
+          locationPara.textContent =
+            "Geolocation is not supported by your browser";
+        }
+      }
+    </script>
   </body>
 </html>
