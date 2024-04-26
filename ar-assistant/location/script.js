@@ -1,106 +1,89 @@
 window.onload = () => {
-  const button = document.querySelector('button[data-action="change"]');
-  button.innerText = "﹖";
-
-  let today = new Date();
-  let curHr = today.getHours();
-  let greetMsg = "";
-  if (curHr < 12) {
-    greetMsg = "good morning";
-  } else if (curHr < 18) {
-    greetMsg = "good afternoon";
-  } else {
-    greetMsg = "good evening";
-  }
-
-  let places = staticLoadPlaces();
-  renderPlaces(places);
-
-  if ("speechSynthesis" in window) {
-    let msg = new SpeechSynthesisUtterance();
-    var voices = window.speechSynthesis.getVoices();
-    // msg.voice = voices[10];
-    // msg.volume = 1; // From 0 to 1
-    // msg.rate = 1; // From 0.1 to 10
-    // msg.pitch = 2; // From 0 to 2
-    // msg.lang = "en";
-    msg.text = `Hi, ${greetMsg}, how can i help you today.`;
-    window.speechSynthesis.speak(msg);
-  } else {
-    // Speech Synthesis Not Supported 😣
-    alert("Sorry, your browser doesn't support text to speech!");
-  }
+  loadModels();
 };
 
-function staticLoadPlaces() {
-  let currentPosition = { latitude: "", longitude: "" };
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function (position) {
-      const latitude = position.coords.latitude;
-      const longitude = position.coords.longitude;
-      currentPosition.latitude = latitude;
-      currentPosition.longitude = longitude;
-      console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
-      document.getElementById(
-        "help-text"
-      ).innerText = `Latitude: ${currentPosition.latitude}, Longitude: ${currentPosition.longitude}`;
-    });
-  } else {
-    console.log("Geolocation is not supported by this browser.");
-  }
-  return [
-    {
-      name: "AR Assistant",
-      location: {
-        lat: 13.081206160268227,
-        lng: 77.64014750889895
-      }
-    }
-  ];
+async function loadModels() {
+  await populateSceneInLocations();
+  console.log(":::ready::::");
 }
-
-var models = [
+let modelList = [
   {
+    place: "test-1",
     url: "./assets/magnemite/scene.gltf",
     scale: "0.5 0.5 0.5",
     info: "Magnemite, Lv. 5, HP 10/10",
-    rotation: "0 180 0"
+    rotation: "0 180 0",
+    location: {
+      lat: 13.0813613,
+      lng: 77.6392601
+    }
   },
   {
+    place: "test-1",
     url: "./assets/articuno/scene.gltf",
     scale: "0.2 0.2 0.2",
     rotation: "0 180 0",
-    info: "Articuno, Lv. 80, HP 100/100"
+    info: "Articuno, Lv. 80, HP 100/100",
+    location: {
+      lat: 13.081206160268227,
+      lng: 77.64014750889895
+    }
   },
   {
+    place: "test-2",
     url: "./assets/dragonite/scene.gltf",
     scale: "0.08 0.08 0.08",
     rotation: "0 180 0",
-    info: "Dragonite, Lv. 99, HP 150/150"
+    info: "Dragonite, Lv. 99, HP 150/150",
+    location: {
+      lat: 13.081206160268227,
+      lng: 77.64014750889895
+    }
   },
   {
+    place: "test-2",
     url: "./assets/taps/scene.gltf",
     scale: "0.5 0.5 0.5",
     rotation: "0 180 0",
-    info: "Tap, Lv. 99, HP 150/150"
+    info: "Tap, Lv. 99, HP 150/150",
+    location: {
+      lat: 13.081206160268227,
+      lng: 77.64014750889895
+    }
   },
   {
+    place: "test-3",
     url: "./assets/beetle/scene.gltf",
     scale: "0.5 0.5 0.5",
     info: "beetle, Lv. 5, HP 10/10",
-    rotation: "0 180 0"
+    rotation: "0 180 0",
+    location: {
+      lat: 13.081206160268227,
+      lng: 77.64014750889895
+    }
   },
   {
+    place: "test-3",
     url: "./assets/phoenix_bird/scene.gltf",
     scale: "0.5 0.5 0.5",
     info: "phoenix_bird, Lv. 5, HP 10/10",
-    rotation: "0 180 0"
+    rotation: "0 180 0",
+    location: {
+      lat: 13.0813751,
+      lng: 77.6393936
+    }
   },
+
   {
+    place: "test-4",
     url: "./assets/nasa_titan/scene.gltf",
     scale: "0.5 0.5 0.5",
     info: "nasa_titan, Lv. 5, HP 10/10",
-    rotation: "0 180 0"
+    rotation: "0 180 0",
+    location: {
+      lat: 13.0813675,
+      lng: 77.6393704
+    }
   }
 ];
 
@@ -124,17 +107,38 @@ var setModel = function (model, entity) {
   div.innerText = model.info + model.position;
 };
 
+async function populateSceneInLocations(models) {
+  // const response = await fetch("models_data.json");
+  // const data = await response.json();
+  console.log("::data ::::", modelList);
+  let scene = document.querySelector("a-scene");
+  modelList.forEach((modelItem) => {
+    let entity = document.createElement("a-entity");
+    entity.setAttribute(
+      "gps-entity-place",
+      `latitude: ${modelItem.location.lat}; longitude: ${modelItem.location.lng};`
+    );
+    setModel(modelItem, entity);
+    entity.setAttribute("animation-mixer", "");
+    scene.appendChild(entity);
+  });
+}
+
 function renderPlaces(places) {
   let scene = document.querySelector("a-scene");
 
   places.forEach((place) => {
-    let latitude = place.location.lat;
-    let longitude = place.location.lng;
+    // let latitude = place.location.lat;
+    // let longitude = place.location.lng;
 
     let model = document.createElement("a-entity");
+    // model.setAttribute(
+    //   "gps-entity-place",
+    //   `latitude: ${latitude}; longitude: ${longitude};`
+    // );
     model.setAttribute(
       "gps-entity-place",
-      `latitude: ${latitude}; longitude: ${longitude};`
+      `latitude: ${model.latitude}; longitude: ${longitude};`
     );
 
     setModel(models[modelIndex], model);

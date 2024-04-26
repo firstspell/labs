@@ -1,0 +1,80 @@
+[
+  {
+    "place": "test-1",
+    "url": "./assets/magnemite/scene.gltf",
+    "scale": "0.5 0.5 0.5",
+    "info": "Magnemite, Lv. 5, HP 10/10",
+    "rotation": "0 180 0",
+    "location": {
+      "lat": 13.0813613,
+      "lng": 77.6392601
+    }
+  },
+  {
+    "place": "test-1",
+    "url": "./assets/articuno/scene.gltf",
+    "scale": "0.2 0.2 0.2",
+    "rotation": "0 180 0",
+    "info": "Articuno, Lv. 80, HP 100/100",
+    "location": {
+      "lat": 13.081206160268227,
+      "lng": 77.64014750889895
+    }
+  },
+  {
+    "place": "test-2",
+    "url": "./assets/dragonite/scene.gltf",
+    "scale": "0.08 0.08 0.08",
+    "rotation": "0 180 0",
+    "info": "Dragonite, Lv. 99, HP 150/150",
+    "location": {
+      "lat": 13.081206160268227,
+      "lng": 77.64014750889895
+    }
+  },
+  {
+    "place": "test-2",
+    "url": "./assets/taps/scene.gltf",
+    "scale": "0.5 0.5 0.5",
+    "rotation": "0 180 0",
+    "info": "Tap, Lv. 99, HP 150/150",
+    "location": {
+      "lat": 13.081206160268227,
+      "lng": 77.64014750889895
+    }
+  },
+  {
+    "place": "test-3",
+    "url": "./assets/beetle/scene.gltf",
+    "scale": "0.5 0.5 0.5",
+    "info": "beetle, Lv. 5, HP 10/10",
+    "rotation": "0 180 0",
+    "location": {
+      "lat": 13.081206160268227,
+      "lng": 77.64014750889895
+    }
+  },
+  {
+    "place": "test-3",
+    "url": "./assets/phoenix_bird/scene.gltf",
+    "scale": "0.5 0.5 0.5",
+    "info": "phoenix_bird, Lv. 5, HP 10/10",
+    "rotation": "0 180 0",
+    "location": {
+      "lat": 13.0813751,
+      "lng": 77.6393936
+    }
+  },
+
+  {
+    "place": "test-4",
+    "url": "./assets/nasa_titan/scene.gltf",
+    "scale": "0.5 0.5 0.5",
+    "info": "nasa_titan, Lv. 5, HP 10/10",
+    "rotation": "0 180 0",
+    "location": {
+      "lat": 13.0813675,
+      "lng": 77.6393704
+    }
+  }
+]
