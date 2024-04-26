@@ -33,7 +33,7 @@
         ></a-box>
       </a-marker> -->
       <a-entity
-        gps-entity-place="latitude: 13.0813675; longitude: 77.6393704;"
+        gps-entity-place="latitude: 13.0813839; longitude: 77.6392583;"
         gltf-model="./assets/flamingosf/scene.gltf"
         rotation="0 180 0"
         animation-mixer
@@ -46,7 +46,14 @@
         animation-mixer
         scale="0.15 0.15 0.15"
       />
-      <a-camera gps-camera="minDistance: 40;" rotation-reader></a-camera>
+      <a-entity
+        gps-entity-place="latitude: 13.081463237818527; longitude: 77.63928402103014;"
+        gltf-model="./assets/magnemite/scene.gltf"
+        rotation="0 180 0"
+        animation-mixer
+        scale="0.15 0.15 0.15"
+      />
+      <a-camera gps-camera rotation-reader></a-camera>
     </a-scene>
     <div class="centered">
       <button data-action="change"></button>
