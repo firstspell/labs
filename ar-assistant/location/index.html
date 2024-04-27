@@ -52,6 +52,7 @@
         animation-mixer="loop: repeat"
         scale="0.6488225300829227 0.6488225300829227 0.6488225300829227"
       />
+
       <a-entity
         look-at="[gps-camera]"
         gps-entity-place="latitude: 13.0813613; longitude: 77.6392601;"
@@ -72,6 +73,8 @@
         alert="true"
         minDistance="2"
       ></a-camera>
+
+      <a-camera gps-camera rotation-reader></a-camera>
     </a-scene>
     <div class="centered">
       <button data-action="change"></button>
