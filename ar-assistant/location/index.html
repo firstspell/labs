@@ -16,12 +16,12 @@
   </head>
 
   <body style="margin: 0; overflow: hidden">
-    <div class="centered instructions"></div>
+    <div class="centered instructions">Updated with version 1.0.0</div>
     <a-scene
       vr-mode-ui="enabled: false"
       embedded
       loading-screen="enabled: true;"
-      arjs="sourceType: webcam;debugUIEnabled: false;"
+      arjs="sourceType: webcam; debugUIEnabled: true;"
       renderer="logarithmicDepthBuffer: true;"
     >
       <!-- Specify the height of the display -->
@@ -43,27 +43,35 @@
           id="magnemite-asset"
           src="./assets/magnemite/scene.gltf"
         ></a-asset-item>
+        <a-asset-item
+          id="dragonite-asset"
+          src="./assets/dragonite/scene.gltf"
+        ></a-asset-item>
       </a-assets>
 
       <a-entity
         look-at="[gps-camera]"
-        gps-entity-place="latitude: 13.0813839; longitude: 77.6392583;"
+        gps-entity-place="latitude: 13.0813839; longitude: 77.6392583"
         gltf-model="#flamingosf-asset"
         animation-mixer="loop: repeat"
         scale="0.6488225300829227 0.6488225300829227 0.6488225300829227"
       />
+      <a-box
+        material="color: yellow"
+        gps-new-entity-place="latitude: 13.0813839; longitude: 77.6392583"
+      />
 
       <a-entity
         look-at="[gps-camera]"
-        gps-entity-place="latitude: 13.0813613; longitude: 77.6392601;"
+        gps-entity-place="latitude: 13.0813613; longitude: 77.6392601"
         gltf-model="#magnemite-asset"
         animation-mixer="loop: repeat"
         scale="0.6488225300829227 0.6488225300829227 0.6488225300829227"
       />
       <a-entity
         look-at="[gps-camera]"
-        gps-entity-place="latitude: 13.081463237818527; longitude: 77.63928402103014;"
-        gltf-model="#magnemite-asset"
+        gps-entity-place="latitude: 13.081463237818527; longitude: 77.63928402103014"
+        gltf-model="#dragonite-asset"
         animation-mixer="loop: repeat"
         scale="0.6488225300829227 0.6488225300829227 0.6488225300829227"
       />
@@ -71,14 +79,14 @@
         gps-camera
         rotation-reader
         alert="true"
-        minDistance="2"
+        minDistance="1"
       ></a-camera>
 
       <a-camera gps-camera rotation-reader></a-camera>
     </a-scene>
-    <div class="centered">
+    <!-- <div class="centered">
       <button data-action="change"></button>
       <span id="help-text"></span>
-    </div>
+    </div> -->
   </body>
 </html>
