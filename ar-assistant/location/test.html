@@ -15,6 +15,11 @@
           id="groundTexture"
           src="https://cdn.aframe.io/a-painter/images/floor.jpg"
         />
+        <audio
+          src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav"
+          autoplay
+          preload
+        ></audio>
       </a-assets>
       <!-- <a-box position="0 2 -3" rotation="0 0 0" color="#4CC3D9"></a-box> -->
       <!-- <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
@@ -40,6 +45,18 @@
         animation="property: object3D.position.y; to: 2.2; dir: alternate; dur: 2000; loop: true"
       ></a-box>
 
+      <a-sound
+        src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav"
+        autoplay="true"
+        position="-3 1 -4"
+      ></a-sound>
+
+      <a-entity
+        text="value: Hello, A-Frame!; color: #BBB"
+        position="-0.9 0.2 -3"
+        scale="2 2 2"
+      ></a-entity>
+
       <a-entity
         id="box"
         position="0 2 -8"
@@ -47,7 +64,7 @@
         scale="2 2 2"
         geometry="primitive: box"
         material="color: red"
-        animation="property: object3D.position.z;easing: linear;dir: alternate; dur: 2000; loop: true"
+        animation="property: object3D.position.y;easing: linear;dir: alternate; dur: 2000; loop: true"
       >
       </a-entity>
       <a-entity
@@ -56,7 +73,7 @@
       >
         <a-sphere position="5 0 0" color="mediumseagreen"></a-sphere>
       </a-entity>
-      <a-sky src="#skyTexture"></a-sky>
+      <!-- <a-sky src="#skyTexture"></a-sky>
       <a-plane
         src="#groundTexture"
         rotation="-90 0 0"
@@ -64,9 +81,12 @@
         height="30"
       ></a-plane>
       <a-light type="ambient" color="#445451"></a-light>
-      <a-light type="point" intensity="2" position="2 4 4"></a-light>
+      <a-light type="point" intensity="2" position="2 4 4"></a-light> -->
+      <a-camera>
+        <a-cursor></a-cursor>
+      </a-camera>
       <!-- Out of the box environment! -->
-      <!-- <a-entity environment="preset: forest; dressingAmount: 500;"></a-entity> -->
+      <a-entity environment="preset: forest; dressingAmount: 500;"></a-entity>
     </a-scene>
   </body>
 </html>
