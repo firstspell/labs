@@ -41,7 +41,18 @@
           src="assets/audio/toy-story.mp3"
           preload="auto"
         ></audio>
+
+        <a-asset-item
+          id="phoenixBird"
+          src="assets/phoenix_bird/scene.gltf"
+        ></a-asset-item>
       </a-assets>
+
+      <a-entity
+        position="0 2 -6"
+        gltf-model="#phoenixBird"
+        animation-mixer
+      ></a-entity>
 
       <a-entity
         id="elmo"

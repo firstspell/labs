@@ -1,0 +1,41 @@
+<script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+<script src="components/random-color.js"></script>
+<script src="components/snap.js"></script>
+<a-scene>
+  <a-assets>
+    <img
+      id="groundTexture"
+      src="https://cdn.aframe.io/a-painter/images/floor.jpg"
+    />
+    <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg" />
+  </a-assets>
+
+  <!-- Box with random color. -->
+  <a-entity
+    geometry="primitive: box; depth: 0.5; height: 0.5; width: 0.5"
+    material="shader: standard"
+    position="0 0.5 -2"
+    random-color
+    snap="offset: 0.25 0.25 0.25; snap: 0.5 0.5 0.5"
+  ></a-entity>
+  <a-cylinder
+    id="ground"
+    src="#groundTexture"
+    radius="32"
+    height="0.1"
+  ></a-cylinder>
+  <a-sky
+    id="background"
+    src="#skyTexture"
+    theta-length="90"
+    radius="30"
+  ></a-sky>
+  <a-entity mixin="voxel" position="-1 0 -2"></a-entity>
+  <a-entity mixin="voxel" position="0 0 -2"></a-entity>
+  <a-entity
+    mixin="voxel"
+    position="0 1 -2"
+    animation="property: rotation; to: 0 360 0; loop: true"
+  ></a-entity>
+  <a-entity mixin="voxel" position="1 0 -2"></a-entity>
+</a-scene>
