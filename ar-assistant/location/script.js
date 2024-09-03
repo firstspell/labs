@@ -7,17 +7,17 @@ async function loadModels() {
   // console.log(":::ready::::");
 }
 let modelList = [
-  {
-    place: "test-1",
-    url: "./assets/magnemite/scene.gltf",
-    scale: "0.5 0.5 0.5",
-    info: "Magnemite, Lv. 5, HP 10/10",
-    rotation: "0 180 0",
-    location: {
-      lat: 13.0813613,
-      lng: 77.6392601
-    }
-  },
+  // {
+  //   place: "test-1",
+  //   url: "./assets/magnemite/scene.gltf",
+  //   scale: "0.5 0.5 0.5",
+  //   info: "Magnemite, Lv. 5, HP 10/10",
+  //   rotation: "0 180 0",
+  //   location: {
+  //     lat: 13.0813613,
+  //     lng: 77.6392601
+  //   }
+  // },
   // {
   //   place: "test-1",
   //   url: "./assets/articuno/scene.gltf",
@@ -81,8 +81,8 @@ let modelList = [
     info: "flamingo, Lv. 5, HP 10/10",
     rotation: "0 180 0",
     location: {
-      lat: 13.0813675,
-      lng: 77.6393704
+      lat: 13.081502108206498,
+      lng: 77.63896632905819
     }
   }
 ];
